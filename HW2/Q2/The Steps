@@ -1,0 +1,34 @@
+#Here are the procedure that we use to complete the question 2.
+
+n<-100
+d<-2
+
+z<-c(1,1,1)
+
+fakedata<-fakedata(z, 100)
+
+S<-fakedata$S
+y<-fakedata$y
+
+
+z<-c(3,2,-1)
+
+perceptrain(S,y)
+
+
+z<-c(1,1,1)
+fakedata.test<-fakedata(z, 100)
+S.test<-fakedata.test$S
+y.test<-fakedata.test$y
+
+classify(S.test,z)-y.test
+
+plot(S.test[,1], S.test[,2],col=ifelse(y.test==1,"red","yellow"))
+#It's better that we could also change the shape of different dots...
+
+
+
+abline(a=-perceptrain$z[3]/perceptrain$z[2],b=-perceptrain$z[1]/perceptrain$z[2])
+
+
+
