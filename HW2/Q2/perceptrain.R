@@ -1,7 +1,7 @@
 perceptrain<-function(S,y){
 	
 	Z_history<-matrix(, nrow<-0, ncol<-d+1)
-	plot(S[,2]~S[,1], col=(y+2))
+	plot(S[,2]~S[,1], col=(y+2), pch=(y+2))
 	
 	
 for(k in 1: 10000){
