@@ -94,7 +94,7 @@ for(b in 1:2){
   indicator[which(sign(pars$m[b]*(pars$theta[b]-data[,pars$j[b]]))==0)]<-0
   error<-sum(w*indicator)
   
-  alpha[b]<-log((1-error)/error)https://www.evernote.com/shard/s200/nl/2147483647/fb7d54e8-5626-4672-a5d1-5c92a0d3ff62/
+  alpha[b]<-log((1-error)/error)
   
   for(k in 1:n){
     
