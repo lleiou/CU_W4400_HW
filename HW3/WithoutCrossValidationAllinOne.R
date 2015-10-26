@@ -1,3 +1,5 @@
+#The followings are all the code that I write to get the final classifier accoding to the whole usps data.
+
 library(e1071)
 data<-read.table("uspsdata.txt")
 y<-read.table("uspscl.txt")
@@ -95,8 +97,11 @@ for(b in 1:10){
     
   }
   
-  #indicator function: I(yi=c(xi))
-  #1*(y!=-sign(data[,j]-threshold))
+
+  
+  
+  
+  
   
   
 }
