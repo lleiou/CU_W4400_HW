@@ -57,3 +57,4 @@ train<-function(X,w,y){
     return(pars)
 
     }
+
