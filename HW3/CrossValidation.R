@@ -59,6 +59,9 @@ for(k in 1:5){
   
 }
 
+#note, the ERROR here is the times that we misclassify the data, not the one that is calculated in the previous 
+#SLIDES. THE ERROR HERE IS DISCUSSED UNDER THE NOTION OF CROSS VALIDATION.
+
 
 #the following procedure is to calculate the average for every iteration and plot the error~b plot
 
