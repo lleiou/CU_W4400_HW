@@ -72,8 +72,8 @@ par(new=TRUE)
 #but the axis may overlap and look weiered, so we reduce the 
 #first plot to only the line itself, without any axis and label
 #but i have to say that the method is not that great...
-plot(rowMeans(errors_test)~c(1:B),col="green",type="l",lty=46,ylim<-c(0:0.2),xlab="B",ylab="Error")
+plot(rowMeans(errors_test)~c(1:B),col="blue",type="l",lty=46,ylim<-c(0:0.2),xlab="B",ylab="Error")
 title("The Testing Error and the Cross-Validated Test Error")
-legend(6,0.16, c("Training Error","Testing Error"),lty=c(1,46),col=c("red", "green"))
+legend(6,0.16, c("Training Error","Testing Error"),lty=c(1,46),col=c("red", "blue"))
 #I started to wonder how to draw the two lines in one plot......
 
