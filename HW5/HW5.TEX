@@ -1,18 +1,190 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 \usepackage[margin=1in]{geometry}          
 \usepackage{graphicx}
 \usepackage{amsthm, amsmath, amssymb}
 \usepackage{setspace}\onehalfspacing
 \usepackage[loose,nice]{units} %replace "nice" by "ugly" for units in upright fractions
- 
+\setlength{\parindent}{0pt}
 \title{W4400 HW5}
-\author{Ao Liu al3472}
-
- 
+\author{Ao Liu | al3472}
 \begin{document}
 \maketitle
 
 
+1.
 
+
+(a)
+
+
+According to Lagrange Method, finding the maximum of $H=-\sum_{i=1}^{4}P_ilog_2P_i$  under $1=\sum_{i=1}^{4}p_i$ is finding the maximum of 
+
+$$-\sum_{i=1}^{4}P_ilog_2P_i-\lambda (\sum_{i=1}^{4}p_i-1)$$
+
+By calculating the derivative of $P_i$, we get 
+
+
+\begin{align}
+\frac{\partial}{\partial P_i}\{-\sum_{i=1}^{4}P_ilog_2P_i-\lambda (\sum_{i=1}^{4}p_i-1)\}&=0\nonumber\\
+-log_2P_i-P_i\frac{\partial log_2P_i}{\partial P_i}-\lambda&=0\nonumber\\
+P_i=2^{-\frac{1}{ln2}-\lambda}\nonumber
+\end{align}
+
+Since $1=\sum_{i=1}^{4}p_i$, we can calculate the value of the $\lambda=2-\frac{1}{ln2}$
+\\\\
+Thus, $$P_i=\frac{1}{4}, i=1,2,3,4$$which means that the variables follow discrete uniform distribution.
+\\
+(b)
+
+
+Let $P_1=1, P_2=P_3=P_4=0$, then 
+\begin{align}
+H&=-P_1log_2P_1\nonumber\\
+&=-log_2{1}\nonumber\\
+&=0\nonumber
+\end{align}
+Since in a discrete space, the entropy $H0\geq0$
+Thus, the minimum of the entropy is reached.
+
+To sum up, by reversing the role of the four numbers, we finally get the following distributions:
+
+$$P_1=1, P_2=P_3=P_4=0$$
+$$P_2=1, P_1=P_3=P_4=0$$
+$$P_3=1, P_1=P_2=P_4=0$$
+$$P_4=1, P_1=P_2=P_3=0$$
+
+
+(c)
+
+Similar to question (a), $$P_i=\frac{1}{2^{n}}, i=1,...n$$
+so we get the entropy:
+$$H=-2^{n}\frac{1}{2^{n}}log_2(\frac{1}{2^{n}})=n$$
+
+
+(d)
+
+According to the situation given in the question, we have a transition matrix:
+$$\textbf{p}=
+\begin{bmatrix}
+0.5&0.5\\0.5&0.5
+\end{bmatrix}
+$$
+The initial distribution of the variables is:
+$$
+P=
+\begin{bmatrix}
+0.5\\  0.5
+\end{bmatrix}
+$$
+
+
+
+
+(e)
+
+
+This chain has lower entropy than the chain above, because it is proved that the chain above has the highest entropy, so this chain must have lower chain than that.
+
+
+(f)
+
+
+According to the situation given in the question, we have a transition matrix:
+$$\textbf{p}=
+\begin{bmatrix}
+0.6&0.3\\0.4&0.7
+\end{bmatrix}
+$$
+
+According to the conclusion we get about equilibrium distribution, $P_{eq}$ should be the eigenvector of $P$ corresponding to eigenvalue equals 1, which, after calculation, is
+$$
+P_{eq}=
+\begin{bmatrix}
+\frac{3}{7}\\  \frac{4}{7}
+\end{bmatrix}
+$$
+
+
+(g)
+
+
+$$\lim_{n\to\infty}P(X_n=0)=P_{eq}(X=0)=\frac{3}{7}$$
+$$\lim_{n\to\infty}P(X_n=1)=P_{eq}(X=1)=\frac{4}{7}$$
+
+
+
+(h)
+
+According to the chain rule for entropy, we have $$H(X_1,X_2,...,X_n)=\sum_{i=1}^{n} H(X_i\vert X_1,...,X_{i-1})$$Then, according to the property of Markov Chain, we have  $$H(X_1,X_2,...,X_n)=H(X_1)+\sum_{i=2}^{n} H(X_i\vert X_{i-1})$$What's more, we know the fact that $$X_1\sim P_{eq}$$so $$H(X_i\vert X_{i-1})=H(X_2\vert X_{1})$$that is to say$$H(X_1,X_2,...,X_n)=H(X_1)+(n-1)H(X_2\vert X_{1})$$
+
+$$H(X_1)=-(3/7)log_2(3/7)-(4/7)log_2(4/7)=0.9852$$
+
+\begin{align}
+H(X_2\vert X_1)&=3/7H(X_2 \vert X_1=0)+4/7H(X_2 \vert X_1=1)\nonumber\\
+&=-3/7[0.6log_2(0.6)+0.4log_2(0.4)]-4/7[0.3log(0.3)+0.7log_2(0.7)]\nonumber\\
+&=0.9197\nonumber
+\end{align}
+
+to sum up,
+$$H(X_1,X_2,...,X_n)=0.9852+(n-1)0.9197$$
+
+
+
+2.
+
+(a)
+
+\begin{figure}[htbp]%位置选项，[htbp]是浮动的意思，可以不全加入
+\centering
+\includegraphics[width=12cm]{photo}
+\caption{The graph of $p(x; \theta)$ when $\theta=1$}
+\label{fig:anna}
+\end{figure}
+
+
+(b)
+The likelihood of this toy dataset is the product of the $p.d.f$ values of the individual data points.
+
+
+(c)
+The  ratio  of  the  likelihood: 
+$$\frac{(2*e^{-2*1})*(2*e^{-2*2})*(2*e^{-2*4})}{(1*e^{-1*1})*(1*e^{-1*2})*(1*e^{-1*4})}=0.4611996<1$$
+Thus, a higher rate would reduce the value of the likelihood.
+
+
+(d)
+
+
+By using Bayes' Formula, we have
+\begin{align}
+q(\theta \vert x)&\propto q(\theta)p(x\vert \theta) \nonumber\\
+&\propto \theta^{\alpha_0-1}\beta_0^{\alpha_0}e^{-\beta_0\theta}\theta^{n}e^{-\sum_{i=1}^{n}x_i\theta}\nonumber\\
+&=\theta^{(\alpha_0-1+n)}e^{-\theta(\beta_0+\sum_{i=1}^{n}x_i)}\nonumber
+\end{align}
+which shows that the posterior distribution of the $\theta$ is
+$$Gamma(\alpha_0+n-1,\beta_0+\sum_{i=1}^{n}x_i)$$
+
+
+(e)
+
+
+$$\Pi(\theta\vert x_{1:n})=\frac{\Pi_{i=1}^{n}p(x_i\vert \theta)}{\Pi p(x_1)p(x_2)...p(x_n)}q(\theta)$$
+similarly, $$\Pi(\theta\vert x_{1:n-1})=\frac{\Pi_{i=1}^{n-1}p(x_i\vert \theta)}{\Pi p(x_1)p(x_2)...p(x_{n-1})}q(\theta)$$
+
+so the posterior can be rewritten as:
+$$\Pi(\theta\vert x_{1:n})=\frac{p(x_n\vert\theta)}{p(x_n)}\Pi(\theta\vert x_{1:n-1})$$
+
+which means the posterior $\Pi(\theta\vert x_{1:n})$ under $n$ observations can be computed as the posterior given a single observation $x_n$ using the prior $\Pi(\theta\vert x_{1:n-1})$
+ 
+ 
+ (f)
+ 
+ 
+ According to the conclusion that we got from question (d), (e), 
+ $p(\theta\vert x_n)$ has distribution: $$Gamma(\alpha_{n-1}+1,\beta_{n-1}+x_n)$$
+
+ 
+ 
+ 
  
 \end{document}
